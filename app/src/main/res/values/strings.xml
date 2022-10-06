@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">MNC</string>
+
+    <string name="basemap_selection">Choose a basemap</string>
+    <string name="layer_selection">Add operational layers</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="zoomTo">2</string>
+    <string name="pointButtonDescription">Draw new point</string>
+    <string name="polylineButtonDescription">Draw new polyline</string>
+    <string name="polygonButtonDescription">Draw new polygon</string>
+    <string name="freehandLineButtonDescription">Draw freehand line</string>
+    <string name="freehandPolyButtonDescription">Draw freehand polygon</string>
+    <string name="undoButtonDescription">Undo</string>
+    <string name="redoButtonDescription">Redo</string>
+    <string name="stopButtonDescription">Stop</string>
+    <string name="mapviewertitle">Map Viewer</string>
+    <string-array name="basemap_array">
+        <item>Streets</item>
+        <item>Imagery</item>
+        <item>Topographic</item>
+        <item>Oceans</item>
+    </string-array>
+    <!-- Operational layer array -->
+    <string-array name="operational_layer_array">
+        <item>Rivers</item>
+        <item>Forest</item>
+        <item>Highway</item>
+        <item>Hospital</item>
+    </string-array>
+    <string name="server_error">we have server error please try again</string>
+    <string name="imgcount_warning">You can select maximum 3 images.</string>
+    <string name="imgcount_succmsg">Image attached successfully.</string>
+    <string name="imgcount_failedmsg">Error encountered while attaching image.</string>
+
+    <string name="natmoinfo11"><b><font color='#ad2634'>Register User\n</font></b></string>
+    <string name="natmoinfo12"><font color='#737373'>You can add the user by registering it through the application \n</font></string>
+
+    <string name="natmoinfo21"><b><font color='#ad2634'>Scan the Bar Code\n</font></b></string>
+    <string name="natmoinfo22"><font color='#737373'>You can score credit points on scanning the bar code of multiple products\n</font></string>
+
+    <string name="natmoinfo31"><b><font color='#ad2634'>Score Credits\n</font></b></string>
+    <string name="natmoinfo32"><font color='#737373'>Submit the credits scored by scanning the bar code.\n</font></string>
+
+    <string-array name="attchment_optin">;
+        <item>Camera</item>
+        <item>Gallery</item>
+    </string-array>
+    <string name="redirect_uri">my-ags-app://auth</string>
+    <string name="creditscore_line"><b>Good News ! </b> Your performance score has been increased since last time we checked</string>
+    <string name="creditscore_line1"><b>Hurry Up ! </b> Your performance score is not good . Please scan the product to score credits</string>
+
+    <string name="client_id">RZOZIkAlswM4GUxZ</string>
+
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:background="@color/theme_red"
+        android:text="Select Basemap"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/street"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/street_map"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/imagery"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/satellite"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imagery"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/toppgraphic"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/topo"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Topographic"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/oceans"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/oceans"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Oceans" />
+    </LinearLayout>
+
+</LinearLayout>

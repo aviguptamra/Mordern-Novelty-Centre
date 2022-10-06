@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.ui.searchuser.SearchUserActivityVM" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/toolbar_searchUser"
+            layout="@layout/toolbar_searchuser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></include>
+
+
+        <LinearLayout
+            android:id="@+id/searchLyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:layout_below="@+id/toolbar_searchUser"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="9"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/roundbtn_white">
+
+            <ImageView
+                android:id="@+id/seachimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:src="@drawable/search"
+                android:tooltipText="search">
+
+            </ImageView>
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+              android:id="@+id/search"
+              android:background="@color/white"
+              android:imeOptions="actionSearch"
+            android:layout_margin="5dp"
+              android:singleLine="true"
+              android:hint="Search"
+              android:layout_weight="7"
+              android:layout_height="wrap_content"
+             app:autoSizeMaxTextSize="50sp"
+              app:autoSizeMinTextSize="12sp"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            app:autoSizeStepGranularity="2sp"
+            android:layout_width="wrap_content">
+              <requestFocus />
+          </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchLyt"
+            android:background="@color/theme_red"
+            android:alpha="0.7"
+            android:drawableLeft="@drawable/info"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="5dp"
+            android:text="Enter User's name or Organization to search"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+
+        <ScrollView
+            android:id="@+id/scrollviewrecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_info"
+            android:background="@drawable/background"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:id="@+id/recyclerView_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/transparent"
+                    android:scrollbarStyle="insideInset"
+                    app:fastScrollEnabled="true"
+                    app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                    app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                    app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                    app:fastScrollVerticalTrackDrawable="@drawable/line_drawable">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/norecordheading_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/textview_info"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
+            android:text="No records to show"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_toolbarS"
+            android:visibility="gone" />
+
+
+
+    </RelativeLayout>
+
+</layout>

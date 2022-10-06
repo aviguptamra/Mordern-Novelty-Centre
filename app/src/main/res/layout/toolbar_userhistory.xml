@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+
+    android:background="@color/theme_red"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/backuserhistory"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:adjustViewBounds="true"
+        android:background="@color/theme_red"
+        android:minWidth="50dp"
+        android:src="@drawable/backarrow"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/txtheading"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="4"
+        android:background="@color/transparent"
+        android:fontFamily="@font/poppins_font"
+        android:padding="8dp"
+        android:text="User History"
+        android:textColor="@color/white"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeMinTextSize="50sp"
+        app:autoSizeStepGranularity="2sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/redeem"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="4dp"
+        android:adjustViewBounds="true"
+        android:background="@color/theme_red"
+        android:minWidth="50dp"
+        android:visibility="gone"
+        android:src="@drawable/redeem2"
+        android:layout_weight="1"/>
+
+</LinearLayout>

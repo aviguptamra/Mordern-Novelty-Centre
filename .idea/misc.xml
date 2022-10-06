@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/button_bar_background.xml" value="0.1225" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/button_pressed.xml" value="0.1225" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1225" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/layout_cornerdialog.xml" value="0.10666666666666667" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/layout_cornerdialog_reg.xml" value="0.1685" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/layout_cornerdialog_whitelining.xml" value="0.1115" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/roundbtn_red.xml" value="0.1115" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/roundbtn_red1.xml" value="0.1665" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/roundbtn_white.xml" value="0.17" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/roundbtn_white_reg.xml" value="0.1685" />
+        <entry key="..\:/NatmoApp/app/src/main/res/drawable/roundbtn_whitelogo.xml" value="0.17" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/activity_forgotpassword.xml" value="0.14666666666666667" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/activity_map_viewer.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/actvity_addfeature.xml" value="0.3631578947368421" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/actvity_introslide.xml" value="0.14743589743589744" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/actvity_register.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/bottom_sheet_attributesdialog.xml" value="0.11348684210526316" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/bottom_sheet_dialog_layout.xml" value="0.22" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/bottom_sheet_dialog_layout_legends.xml" value="0.3333333333333333" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/bottom_sheet_dialog_layout_spinner.xml" value="0.14666666666666667" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/dialog_basemap.xml" value="0.14460562103354488" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/dialog_geocoedinates.xml" value="0.1453804347826087" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/dialog_legends.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/dialog_reg_success.xml" value="0.1554054054054054" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/items_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/point_line_polygon_toolbar.xml" value="0.1453804347826087" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/point_line_polygon_toolbar1.xml" value="0.14666666666666667" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/selected_dot.xml" value="0.1" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/tab_selector.xml" value="0.1" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/toolbar_addfeature.xml" value="0.16666666666666666" />
+        <entry key="..\:/NatmoApp/app/src/main/res/layout/toolbar_register.xml" value="0.14743589743589744" />
+        <entry key="..\:/NatmoApp/app/src/main/res/menu/bottom_navigation.xml" value="0.1796875" />
+        <entry key="..\:/NatmoApp/app/src/main/res/menu/main_menu.xml" value="0.22" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable-v24/layout_cornerdialog_colorlining.xml" value="0.131" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable-v24/thumb.xml" value="0.131" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/layout_cornerdialog.xml" value="0.1685" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/layout_cornerdialog_reg.xml" value="0.1685" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/layout_cornerdialog_whitelining.xml" value="0.1685" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/roundbtn_red.xml" value="0.131" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/roundbtn_red1.xml" value="0.1685" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/roundbtn_white.xml" value="0.131" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/roundbtn_whitelogo.xml" value="0.1685" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/tab_color_selector.xml" value="0.1195" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/tab_selector.xml" value="0.1195" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/activity_forgotpassword.xml" value="0.11655405405405406" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/activity_map_viewer.xml" value="0.14749893116716545" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/activity_userhistory.xml" value="0.13333333333333333" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_addfeature.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_addproductseries.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_creditscore.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_creditscoreuser.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_introslide.xml" value="0.1796875" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/actvity_register.xml" value="0.13333333333333333" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/bottom_sheet_attributesdialog.xml" value="0.1796875" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/bottom_sheet_dialog_layout_legends.xml" value="0.11655405405405406" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_addproductseries_success.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_geocoedinates.xml" value="0.14365113296280463" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_legends.xml" value="0.14749893116716545" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_redeem_success.xml" value="0.14365113296280463" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_redeempoints.xml" value="0.13333333333333333" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_reg_success.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/dialog_scanproduct_success.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/fragment_tab.xml" value="0.26953125" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/items_layout.xml" value="0.11655405405405406" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/point_line_polygon_toolbar1.xml" value="0.14749893116716545" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/searchlist.xml" value="0.4466666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/searchuser.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/syncinterfaceinteractor_activity.xml" value="0.31805555555555554" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/tab_color_selector.xml" value="0.14140625" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_addfeature.xml" value="0.16666666666666666" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_creditscore.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_creditscoreuser.xml" value="0.4466666666666667" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_register.xml" value="0.1796875" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_searchuser.xml" value="0.3333333333333333" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_syncinterctor.xml" value="0.26953125" />
+        <entry key="..\:/Personal/NatmoApp/app/src/main/res/layout/toolbar_userhistory.xml" value="0.26953125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

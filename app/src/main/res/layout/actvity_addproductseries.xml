@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.ui.addproductseries.AddProductSeriesActivityVM" />
+    </data>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_extgrp"
+                layout="@layout/toolbar_addfeature"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></include>
+
+            <LinearLayout
+                android:id="@+id/extlyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar_extgrp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/productseries"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Product Series"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/productseriestxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/points"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Points"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pointsedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/remarkstext"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Remarks"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/remarksedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/extlyt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSubmit_benficiarydetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/red"
+                        android:ellipsize="start"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layoutDirection="inherit"
+                        android:paddingLeft="15dp"
+                        android:onClick="@{()-> viewModel.showProductSeries_SubmissionAlert()}"
+                        android:paddingRight="15dp"
+                        android:text="Submit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/darkgrey"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="100sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeStepGranularity="2sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/searchLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/red"
+                android:alpha="0.7"
+                android:layout_below="@+id/extlyt"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="9"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/roundbtn_white">
+
+                    <ImageView
+                        android:id="@+id/seachimg_ap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:padding="8dp"
+                        android:src="@drawable/search"
+                        android:tooltipText="search">
+
+                    </ImageView>
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/search_ap"
+                        android:background="@color/white"
+                        android:imeOptions="actionSearch"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"
+                        android:hint="Search"
+                        android:layout_weight="7"
+                        android:layout_height="wrap_content"
+                        app:autoSizeMaxTextSize="50sp"
+                        app:autoSizeMinTextSize="12sp"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        app:autoSizeStepGranularity="2sp"
+                        android:layout_width="wrap_content">
+                        <requestFocus />
+                    </androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+      <!--      <ScrollView
+                android:id="@+id/scrollviewrecycler_ap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchLyt"
+                android:fillViewport="false">-->
+            <LinearLayout
+                android:id="@+id/recyclerView_lyt_ap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchLyt"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/background"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_ap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:scrollbarStyle="insideInset"
+                    app:fastScrollEnabled="true"
+                    app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                    app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                    app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                    app:fastScrollVerticalTrackDrawable="@drawable/line_drawable">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/norecordheading_series"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/searchLyt"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="10dp"
+                android:text="No records to show"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_toolbarS"
+                android:visibility="gone" />
+           <!-- </ScrollView>-->
+
+
+
+        </RelativeLayout>
+
+
+
+
+</layout>

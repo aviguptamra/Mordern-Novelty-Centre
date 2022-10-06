@@ -1,0 +1,349 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="300dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_red"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="serif"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:text="POI Features Info "
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/bottom_sheet_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/arrow_dwn_white" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:filterTouchesWhenObscured="false"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/black"
+                    android:fontFamily="sans-serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="Category - "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/categorytxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:fontFamily="serif"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="Hospital"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:text="State - "
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/statetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:fontFamily="serif"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="Uttar Pradesh"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="District - "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/citytxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:fontFamily="serif"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="Kanpur"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="Pincode - "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/pincodetxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:textAlignment="textStart"
+                    android:fontFamily="serif"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="208003"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:text="Address - "
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/addresstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:textAlignment="textStart"
+                    android:fontFamily="serif"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="87/152, dev nagar ,near strong power gym kanpur"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="Remarks - "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/remarkstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="service is remarkably good and very helping nature and sincere timings of staff"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor= "@color/black"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="Description - "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/desctxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor= "@color/darkgreyhigh"
+                    android:textAlignment="textStart"
+                    android:fontFamily="serif"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="This is government hospital and in clean condition"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor= "@color/black"
+                android:fontFamily="serif"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:text="Attachments - "
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:id="@+id/imgviewthumnaillyt"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@color/transparent"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewthumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Draft"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/darkgreyhigh" />
+
+                <ImageView
+                    android:id="@+id/imageViewthumbnail1"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/darkgreyhigh" />
+
+                <ImageView
+                    android:id="@+id/imageViewthumbnail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Draft"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/darkgreyhigh" />
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

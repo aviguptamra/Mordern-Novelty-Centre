@@ -1,0 +1,122 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/theme_red</item>
+        <item name="colorPrimaryDark">@color/theme_red</item>
+        <item name="colorAccent">@color/darkgrey</item>
+    </style>
+
+  <!--  <style name="mapviewer" parent="Theme.AppCompat.Light">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="colorPrimary">@color/theme_red</item>
+        <item name="colorPrimaryDark">@color/theme_red</item>
+        <item name="colorAccent">@color/theme_red</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+-->
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="boxStrokeColor">@color/edit_text_box_border</item>
+    </style>
+
+    <style name="ThemeOverlay.App.ExposedDropdownMenu" parent="">
+        <item name="colorPrimary">@color/darkgreyhigh</item>
+        <item name="colorOnSurface">@color/darkgreyhigh</item>
+        <item name="colorError">@color/darkgreyhigh</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.App.Caption</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense</item>
+    </style>
+
+    <style name="TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="TextAppearance.App.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/theme_red</item>
+        <item name="colorPrimaryDark">@color/theme_red</item>
+        <item name="colorAccent">@color/theme_red</item>
+    </style>
+
+    <style name="MyToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/theme_red</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+    <style name="ListStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <!-- <item name="android:dividerHeight">1dp</item> -->
+        <!-- <item name="android:divider">#CCCCCC</item> -->
+        <item name="android:cacheColorHint">#FFFFFF</item>
+        <item name="android:listSelector">#00000000</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@style/AppTheme1</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+    <style name="DialogWindowTitle">
+        <item name="android:background">@color/theme_red</item>
+        <item name="android:textColor">@color/theme_red</item>
+        <item name="android:textSize">25px</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ButtonextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/black</item>
+    </style>
+
+    <style name="Theme.AnAutomaticAndroidSlider" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+
+
+    <style name="AppTheme1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/theme_red</item>
+        <item name="colorPrimaryDark">@color/theme_red</item>
+        <item name="colorAccent">@color/darkgrey</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DrawerArrowStyle_Dialog" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/theme_red</item>
+    </style>
+
+
+
+</resources>

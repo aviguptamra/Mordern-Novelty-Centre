@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.ui.userdetails.UserDetailsActivityVM" />
+    </data>
+    <ScrollView
+        android:id="@+id/scrollbar_ps"
+        android:layout_width="match_parent"
+        android:background="@drawable/background"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_ps"
+                layout="@layout/toolbar_creditscoreuser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></include>
+
+
+            <LinearLayout
+                android:id="@+id/reglyt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar_ps"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:visibility="visible"
+                    android:background="@drawable/layout_cornerdialog_whitelining"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/usernames"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/theme_red"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            android:textSize="18dp"
+                            android:padding="10dp"
+                            android:maxLength="50"
+                            android:alpha="0.7"
+                            android:text="DIVYANSH SRIVASTAVA"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="left"
+                            android:text="Organization Name :  "
+                            android:textColor="@color/red"
+                            android:textSize="16dp"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/orgname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:text="Institution"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Organization Type :  "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/orgtypes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:text="Institution"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Scored Credits :  "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/credits"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:text="24 Points"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Mobile No :  "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:textSize="16dp"
+                            android:text="877767654"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Birth Date :  "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:textSize="16dp"
+                            android:layout_weight="1"
+                            android:text="6/23/1994"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="left"
+                            android:text="Gender :  "
+                            android:textColor="@color/red"
+                            android:textSize="16dp"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Female"
+                            android:textSize="16dp"
+                            android:layout_gravity="left"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Address :  "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:text="23/56 ,dev nagar"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="left"
+                            android:text="District :  "
+                            android:textColor="@color/red"
+                            android:textSize="16dp"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/district"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:text="Kanpur"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="left"
+                            android:text="State :  "
+                            android:textColor="@color/red"
+                            android:textSize="16dp"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/states"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:text="Uttar Pradesh"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Email :   "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="shri@gmail.com"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Pincode : "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                        <TextView
+                            android:id="@+id/pincodes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:text="234566"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                       <androidx.appcompat.widget.AppCompatButton
+                           android:id="@+id/backbtn"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/roundbtn_red1"
+                           android:textColor="@color/white"
+                           android:text="Back"
+                           android:textAllCaps="false"
+                           android:gravity="center"
+                           android:layout_gravity="center"/>.
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <!--<CheckBox
+                        android:id="@+id/checkbox_grp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="5dp"
+                        />-->
+
+                <!--  <ImageView
+                          android:id="@+id/img_grp"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginRight="5dp"
+                          android:layout_marginTop="5dp"
+                          android:src="@drawable/cancel_popup"
+                          android:visibility="gone"></ImageView>
+
+                      <ImageView
+                          android:id="@+id/img_synctick"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginRight="5dp"
+                          android:layout_marginTop="5dp"
+                          android:src="@drawable/tick"
+                          android:visibility="gone"></ImageView>-->
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

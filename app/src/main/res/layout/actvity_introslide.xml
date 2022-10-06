@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.ui.introslide.IntroSlideActivityVM" />
+    </data>
+    <ScrollView
+        android:id="@+id/scrollbar_extgrp"
+        android:layout_width="match_parent"
+        android:background="@drawable/background"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:id="@+id/imagelyt"
+            android:background="@drawable/background"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/my_pager"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="600dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+       <!-- <LinearLayout
+            android:id="@+id/textlyt"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_below="@+id/imagelyt"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/natmoinfo"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins_semibolditalic"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+
+
+
+
+
+&lt;!&ndash;
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/matmoinfo1"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/purple_500"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/matmoinfo2"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/magenta"
+                android:textSize="15sp" />&ndash;&gt;
+        </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/slider_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/imagelyt"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.tabs.TabLayout
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tabGravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/my_tablayout"
+                    android:layout_weight="1"
+                    app:tabBackground="@drawable/tab_selector"
+                    android:background="@color/transparent"
+                    app:tabIndicatorHeight="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/my_pager">
+                </com.google.android.material.tabs.TabLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slider_background"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:onClick="@{()-> viewModel.shownextsltide()}"
+                    app:srcCompat="@drawable/rightarr1"
+                    tools:ignore="ContentDescription" />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</layout>

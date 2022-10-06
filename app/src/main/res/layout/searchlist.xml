@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:background="@drawable/layout_cornerdialog_colorlining"
+    android:orientation="horizontal">
+
+
+    <GridLayout
+        android:id="@+id/list_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="9"
+        android:columnCount="4"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtname_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnSpan="4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLength="50"
+            android:text="Divyansh Srivastava"
+            android:textColor="@color/theme_red"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+        <TextView
+            android:id="@+id/txtLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_row="1"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Scored Credits : "
+            android:textColor="@color/black"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+        <TextView
+            android:id="@+id/txtLabel1Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_row="1"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="24 Points"
+            android:textColor="@color/black"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+        <TextView
+            android:id="@+id/txtLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_row="2"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Last Active Date : "
+            android:textColor="@color/black"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+
+        <TextView
+            android:id="@+id/txtLabel2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="10dp"
+            android:layout_row="2"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="23-Sept-2021"
+            android:textColor="@color/black"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+
+      <TextView
+            android:id="@+id/txtLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_row="3"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Last Active Date : "
+          android:visibility="gone"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+
+        <TextView
+            android:id="@+id/txtLabel3Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:visibility="gone"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="10dp"
+            android:layout_row="3"
+            android:background="@color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:text="23-Sept-2021"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeStepGranularity="2sp" />
+
+
+    </GridLayout>
+
+    <!--<CheckBox
+        android:id="@+id/checkbox_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        />-->
+
+    <ImageView
+        android:id="@+id/img_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/delete"
+        android:visibility="visible"></ImageView>
+
+  <!--  <ImageView
+        android:id="@+id/img_synctick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/tick"
+        android:visibility="gone"></ImageView>&ndash;&gt;-->
+
+</LinearLayout>

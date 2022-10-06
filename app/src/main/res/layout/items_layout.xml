@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    >
+
+    <ImageView
+        android:id="@+id/my_featured_image"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:padding="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/modi2"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+<!--    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="@+id/my_featured_image"
+        tools:ignore="ContentDescription"
+        android:id="@+id/slider_background"/>-->
+
+   <!-- <TextView
+        android:id="@+id/my_caption_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="The Caption Title"
+        android:layout_below="@+id/my_featured_image"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_featured_image"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />-->
+    <TextView
+        android:id="@+id/my_caption_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_featured_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/natmoinfo11"
+        android:textAlignment="textStart"
+        android:textColor="@color/red"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/my_caption_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_caption_title"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:text="@string/natmoinfo32"
+        android:textAlignment="center"
+        android:textColor="@color/darkgrey"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+</RelativeLayout>

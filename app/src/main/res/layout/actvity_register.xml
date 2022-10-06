@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.auth.register.RegisterActivityVM" />
+    </data>
+    <ScrollView
+        android:id="@+id/scrollbar_reg"
+        android:layout_width="match_parent"
+        android:background="@drawable/background"
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_register"
+                layout="@layout/toolbar_register"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></include>
+
+
+            <LinearLayout
+                android:id="@+id/reglyt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar_register"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/firstname"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="First Name"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/firstnameedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLength="100"
+                        android:text=""
+                        android:textColor="@color/black"/>
+                        <!--tools:ignore="TouchTargetSizeCheck"--> />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lastname"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Last Name"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lastnameedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Email Id"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailedtt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="100"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Mobileno"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Mobile No"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mobilenoedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pwd"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Password"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pwdedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLength="15"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/pwdvalid_msg"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:textColor="@color/theme_red"
+                    android:text="* Password must contain at least one upper case, one lower case , one digit and one special character"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/conpwd"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Confirm Password"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/conpwdedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:maxLength="15"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/gender"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:theme="@style/ThemeOverlay.App.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Gender"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/gendertxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:longClickable="false"
+                        android:focusable="false"
+                        android:maxLength="20"
+                        android:onClick="@{()-> viewModel.showGenderDropdown()}"
+                        android:text=""
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dateofbirth"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:theme="@style/ThemeOverlay.App.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Date of Birth"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/dobtextedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:maxLength="11"
+                        android:longClickable="false"
+                        android:focusable="false"
+                        android:onClick="@{()-> viewModel.showcalendar()}"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/orgtype"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:theme="@style/ThemeOverlay.App.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Organization Type"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/orgtypeedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:onClick="@{()-> viewModel.showOrgtypeDropdown()}"
+                        android:text=""
+                        android:longClickable="false"
+                        android:focusable="false"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/orgnames"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Organization Name"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/orgnameedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Address"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Address"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Addressedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="254"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/statename"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:theme="@style/ThemeOverlay.App.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="State"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/statenamedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:onClick="@{()-> viewModel.showstateDropdown()}"
+                        android:text=""
+                        android:longClickable="false"
+                        android:focusable="false"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/disame"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:theme="@style/ThemeOverlay.App.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="District"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/disnamedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:onClick="@{()-> viewModel.showdistrictDropdown()}"
+                        android:text=""
+                        android:longClickable="false"
+                        android:focusable="false"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pincodeno"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="Pincode"
+                    android:textColorHint="@color/black"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pincodenoedt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/extlyt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/red"
+                        android:ellipsize="start"
+                        android:layoutDirection="inherit"
+                        android:onClick="@{()-> viewModel.showRegistrationAlert()}"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="Register"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/darkgrey"
+                        android:textStyle="bold"
+                        app:autoSizeMaxTextSize="100sp"
+                        app:autoSizeMinTextSize="12sp"
+                        app:autoSizeStepGranularity="2sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

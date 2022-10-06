@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:id="@+id/scrollview_groundtruthing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Redeem Points"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:background="@color/theme_red"
+                android:fontFamily="@font/poppins_regular"
+                android:contentDescription="@string/app_name" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pointsredeem"
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Points "
+                android:textColorHint="@color/black"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pointsredeemedt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:text=""
+                    android:textColor="@color/black"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/redeempointmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:text="* Please enter points to redeem"
+                android:textColor="@color/rederror"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/remarksredeem"
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Remarks "
+                android:textColorHint="@color/black"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/remarksredeemedt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:text=""
+                    android:textColor="@color/black"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/remarksmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:text="* Please enter remarks"
+                android:textColor="@color/rederror"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_redeem"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_cornerdialog"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Redeem"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp" />
+
+            <Button
+                android:id="@+id/btn_cancelredeem"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_cornerdialog"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Cancel"
+                android:layout_marginBottom="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="2sp" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
