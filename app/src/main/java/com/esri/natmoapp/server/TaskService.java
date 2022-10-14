@@ -1,10 +1,12 @@
 package com.esri.natmoapp.server;
 
 import com.esri.natmoapp.model.AddProductSeries;
+import com.esri.natmoapp.model.ForgotPassword;
 import com.esri.natmoapp.model.LoginResponse;
 import com.esri.natmoapp.model.ProductDetails;
 import com.esri.natmoapp.model.RedeemHistory;
 import com.esri.natmoapp.model.Registration;
+import com.esri.natmoapp.model.ResetPassword;
 import com.esri.natmoapp.model.UserDetail;
 import com.esri.natmoapp.model.UserHistory;
 import com.esri.natmoapp.model.UserHistoryModel;
@@ -54,6 +56,12 @@ public interface TaskService {
 
     @POST("/redeem/points")
     Call<Void> RedeemPoints(@Body RedeemHistory redeemHistory, @Header("Authorization") String auth);
+
+    @POST("/user/forgotPassword")
+    Call<Void> ForgotPassword(@Body ForgotPassword forgotPassword);
+
+    @POST("/user/resetPassword")
+    Call<Void> ResetPassword(@Body ResetPassword resetPassword);
 
 }
 

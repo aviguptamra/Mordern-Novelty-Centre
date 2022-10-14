@@ -65,7 +65,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
             try {
                 IntentIntegrator intentIntegrator = new IntentIntegrator(activity);
                 intentIntegrator.initiateScan();
-               /* ScanProduct("MNRTYT012");*/
+               // ScanProduct("56655DJMANGAL5t566BHARAT31");
             } catch (Exception e) {
                 Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);

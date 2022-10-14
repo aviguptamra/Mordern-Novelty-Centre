@@ -30,7 +30,7 @@ public class IntroSlideActivityVM extends ActivityViewModel<IntroSlideActivity> 
 
     public void shownextsltide() {
         Intent intent = new Intent(activity, LoginActivity.class);
-        intent.putExtra("usertype", "Public");
+        //intent.putExtra("usertype", "Public");
         activity.startActivity(intent);
     }
 

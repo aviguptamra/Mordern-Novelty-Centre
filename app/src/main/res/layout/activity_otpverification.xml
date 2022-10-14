@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.esri.natmoapp.auth.otpverification.OtpVerificationVM" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Verification_code"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailmsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="30dp"
+        android:lineSpacingExtra="4dp"
+        android:text="Please type the verification code sent to your email shristyxxxxxx06@gmail.com"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/theme_red"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.goodiebag.pinview.Pinview
+        android:id="@+id/otp_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pinWidth="70dp"
+        app:pinHeight="70dp"
+        app:pinLength="4"
+        app:cursorVisible="false"
+        app:forceKeyboard="false"
+        app:hint="0"
+        app:inputType="number"
+        app:password="false"/>
+
+    <TextView
+        android:id="@+id/otpmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="* Please enter valid otp"
+        android:textColor="@color/rederror"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_buttons"
+        android:onClick="@{()-> viewModel.VerifyOtp()}"
+        android:padding="12dp"
+        android:text="Verify"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_view" />
+
+
+</LinearLayout>
+
+</layout>
+
+<!--
+    app:layout_constraintTop_toBottomOf="@+id/otp_view"-->

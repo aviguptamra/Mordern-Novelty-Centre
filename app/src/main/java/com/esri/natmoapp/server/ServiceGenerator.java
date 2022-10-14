@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ServiceGenerator {
 
     //Server URL
-    private static final String BASE_URL="https://7feb-2406-7400-63-c2d7-6db5-d5cd-9a2a-4c43.in.ngrok.io/";
+    private static final String BASE_URL="https://6bdf-2406-7400-63-8e0-2db5-72c3-401-bfce.in.ngrok.io/";
 
     private static Retrofit retrofit = null;
     TaskService taskService;

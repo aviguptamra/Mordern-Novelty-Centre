@@ -39,6 +39,16 @@
         <entry key="..\:/NatmoApp/app/src/main/res/layout/toolbar_register.xml" value="0.14743589743589744" />
         <entry key="..\:/NatmoApp/app/src/main/res/menu/bottom_navigation.xml" value="0.1796875" />
         <entry key="..\:/NatmoApp/app/src/main/res/menu/main_menu.xml" value="0.22" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/drawable/bg_buttons.xml" value="0.1325" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_forgotpassword.xml" value="0.22" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_login.xml" value="0.1513157894736842" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_main.xml" value="0.1513157894736842" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_otpverification.xml" value="0.14666666666666667" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_resetpassword.xml" value="0.16666666666666666" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/activity_userhistory.xml" value="0.1513157894736842" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/dialog_redeempoints.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/dialog_resetsuccess.xml" value="0.11348684210526316" />
+        <entry key="..\:/Personal/MNC Git/MNC/app/src/main/res/layout/samplebackground.xml" value="0.10460526315789474" />
         <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable-v24/layout_cornerdialog_colorlining.xml" value="0.131" />
         <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable-v24/thumb.xml" value="0.131" />
         <entry key="..\:/Personal/NatmoApp/app/src/main/res/drawable/layout_cornerdialog.xml" value="0.1685" />

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.esri.natmoapp.R;
+import com.esri.natmoapp.auth.forgotpassword.ForgotPasswordActivity;
 import com.esri.natmoapp.auth.register.RegisterActivity;
 import com.esri.natmoapp.db.DatabaseController;
 import com.esri.natmoapp.model.APIErrorResponse;
@@ -68,7 +69,7 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
             String username = activity.getBinding().emailEdt.getText().toString().trim().toLowerCase();
             String password = activity.getBinding().passEdt.getText().toString();
             UserDetail userDetail = new UserDetail();
-            userDetail.setPassword(AESCrypt.encrypt(password));
+            userDetail.setPassword(AESCrypt.encrypt(password.trim()));
             int isnumber = 1;
             for (int i = 0; i <= username.length() - 1; i++) {
                 if (!(username.charAt(i) >= 48 && username.charAt(i) <= 57)) {
@@ -76,9 +77,9 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
                 }
             }
             if (isnumber == 0) {
-                userDetail.setEmail(username);
+                userDetail.setEmail(username.trim());
             } else {
-                userDetail.setMobile(username);
+                userDetail.setMobile(username.trim());
             }
             if (commonFunctions.isNetworkConnected(activity)) {
                 LoginUser(userDetail);
@@ -163,6 +164,11 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
         } else {
             Log.d(TAG, message);
         }
+    }
+
+    public void forgotpassword() {
+        Intent intent = new Intent(activity, ForgotPasswordActivity.class);
+        activity.startActivity(intent);
     }
 
     public void Register()

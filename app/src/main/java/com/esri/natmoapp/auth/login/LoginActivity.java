@@ -16,7 +16,7 @@ public class LoginActivity extends BindingActivity<ActivityLoginBinding, LoginAc
 
     @Override
     public LoginActivityVM onCreate() {
-        usertype = getIntent().getExtras().getString("usertype");
+        //usertype = getIntent().getExtras().getString("usertype");
         progressDialog = new ProgressDialog(this);
         return new LoginActivityVM(this, this);
     }

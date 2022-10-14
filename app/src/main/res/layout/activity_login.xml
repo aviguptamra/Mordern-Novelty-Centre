@@ -144,11 +144,11 @@
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/red"
                 android:hint="  Password"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black"
                 android:padding="10dp"
                 android:textColorHint="@color/darkgrey"
-                app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
 
                 <AutoCompleteTextView
                     android:id="@+id/passEdt"
@@ -201,6 +201,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
                     android:gravity="center"
+                    android:onClick="@{()-> viewModel.forgotpassword()}"
                     android:text="Click here"
                     android:textAlignment="textEnd"
                     android:textColor="@color/theme_red"

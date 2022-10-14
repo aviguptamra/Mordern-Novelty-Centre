@@ -318,7 +318,15 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
             activity.getBinding().pwdedt.requestFocus();
             showsoftKeyBoard(activity);
             new CommonFunctions().showSnackBar("Please enter password !!", false, activity);
-        } else if (!isValidPassword(activity.getBinding().pwdedt.getText().toString())) {
+        }
+        else if (activity.getBinding().pwdedt.getText().toString().trim().length()<8) {
+            valid = false;
+            activity.getBinding().scrollbarReg.scrollTo(0, activity.getBinding().pwdedt.getBottom());
+            activity.getBinding().pwdedt.requestFocus();
+            showsoftKeyBoard(activity);
+            new CommonFunctions().showSnackBar("Password should be at least 8 characters !!", false, activity);
+        }
+        else if (!isValidPassword(activity.getBinding().pwdedt.getText().toString())) {
             valid = false;
             activity.getBinding().scrollbarReg.scrollTo(0, activity.getBinding().pwdedt.getBottom());
             activity.getBinding().pwdedt.requestFocus();
