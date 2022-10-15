@@ -10,6 +10,7 @@ import com.esri.natmoapp.model.ResetPassword;
 import com.esri.natmoapp.model.UserDetail;
 import com.esri.natmoapp.model.UserHistory;
 import com.esri.natmoapp.model.UserHistoryModel;
+import com.esri.natmoapp.model.VerifyMail;
 
 import java.util.List;
 
@@ -62,6 +63,9 @@ public interface TaskService {
 
     @POST("/user/resetPassword")
     Call<Void> ResetPassword(@Body ResetPassword resetPassword);
+
+    @POST("/user/verifyMail")
+    Call<Void> VerifyMail(@Body VerifyMail verifyMail);
 
 }
 

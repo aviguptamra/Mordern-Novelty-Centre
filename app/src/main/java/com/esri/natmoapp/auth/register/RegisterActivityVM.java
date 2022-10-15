@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.esri.natmoapp.R;
 import com.esri.natmoapp.auth.login.LoginActivity;
+import com.esri.natmoapp.auth.otpverification.OtpVerification;
 import com.esri.natmoapp.db.CommonDatabaseFunctions;
 import com.esri.natmoapp.model.APIErrorResponse;
 import com.esri.natmoapp.model.Registration;
@@ -22,11 +23,13 @@ import com.esri.natmoapp.server.ServiceGenerator;
 import com.esri.natmoapp.util.AESCrypt;
 import com.esri.natmoapp.util.CommonFunctions;
 import com.esri.natmoapp.util.Constants;
+import com.esri.natmoapp.util.SharedPref;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.stfalcon.androidmvvmhelper.mvvm.activities.ActivityViewModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -70,12 +73,15 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
     }
     public void RegisterUser() {
         try {
+            String otp=getRandomNumberString().trim();
+            SharedPref sharedPref=new SharedPref(activity,"");
+            sharedPref.set("otp",otp);
             Registration registration = new Registration();
             registration.setFname(activity.getBinding().firstnameedt.getText().toString());
             registration.setLname(activity.getBinding().lastnameedt.getText().toString());
-            registration.setEmail(activity.getBinding().emailedtt.getText().toString());
+            registration.setEmail(activity.getBinding().emailedtt.getText().toString().trim());
             registration.setMobile(activity.getBinding().mobilenoedt.getText().toString());
-            registration.setPassword(AESCrypt.encrypt(activity.getBinding().pwdedt.getText().toString()));
+            registration.setPassword(AESCrypt.encrypt(activity.getBinding().pwdedt.getText().toString().trim()));
             registration.setGender(activity.getBinding().gendertxt.getText().toString());
             registration.setDob(activity.getBinding().dobtextedt.getText().toString());
             registration.setOrganizationType(activity.getBinding().orgtypeedt.getText().toString());
@@ -84,7 +90,8 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
             registration.setState(activity.getBinding().statenamedt.getText().toString());
             registration.setDistrict(activity.getBinding().disnamedt.getText().toString());
             registration.setPin(activity.getBinding().pincodenoedt.getText().toString());
-            registration.setUserType("Public");
+            //registration.setUserType("Public");
+            registration.setOtp(otp);
             registration.setLatitude(String.valueOf(activity.latitude));
             registration.setLongitude(String.valueOf(activity.longitude));
             registration.setDeviceId(Settings.Secure.getString(activity.getContentResolver(),
@@ -100,6 +107,15 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
         }
     }
 
+    public static String getRandomNumberString() {
+        // It will generate 6 digit random Number.
+        // from 0 to 9999
+        Random rnd = new Random();
+        int number = rnd.nextInt(9999);
+        // this will convert any number sequence into 6 character.
+        return String.format("%04d", number);
+    }
+
     public void RegisterUser(Registration registration) {
         activity.progressDialog.setMessage("Communicating from server");
         interactor.setShowProgress();
@@ -112,7 +128,7 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
                     interactor.setHideProgress();
                     if (response.code() == 201) {
                         activity.runOnUiThread(() -> logToUser(Constants.IS_NOT_ERROR, Constants.USER_REGISTRATION_MSG));
-                        show_RegSuccessDialog();
+                        show_RegSuccessDialog(registration);
                     } else if (response.code() == 409) {
                         String response_error = response.errorBody().string();
                         APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
@@ -228,10 +244,10 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
     }
 
 
-    public void show_RegSuccessDialog() {
+    public void show_RegSuccessDialog(Registration registration) {
         LayoutInflater inflater = activity.getLayoutInflater();
         View regsuccess_popup = inflater.inflate(R.layout.dialog_reg_success, null);
-        IntializeRegSuccess_ViewPopup(regsuccess_popup);
+        IntializeRegSuccess_ViewPopup(regsuccess_popup,registration);
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
         builder.setView(regsuccess_popup);
         builder_DialogRegSuccess = builder.create();
@@ -240,13 +256,15 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
         builder_DialogRegSuccess.setCanceledOnTouchOutside(false);
     }
 
-    private void IntializeRegSuccess_ViewPopup(View regsuccess_popup) {
+    private void IntializeRegSuccess_ViewPopup(View regsuccess_popup,Registration registration) {
 
         submit = (Button) regsuccess_popup.findViewById(R.id.reg_ack);
         submit.setOnClickListener(v -> {
             builder_DialogRegSuccess.cancel();
-            Intent intent = new Intent(activity, LoginActivity.class);
-            intent.putExtra("usertype", "SURVEY");
+            Intent intent=new Intent(activity, OtpVerification.class);
+            intent.putExtra("email",registration.getEmail());
+            intent.putExtra("otp",registration.getOtp());
+            intent.putExtra("isReset",0);
             activity.startActivity(intent);
         });
     }

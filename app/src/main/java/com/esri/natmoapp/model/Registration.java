@@ -54,6 +54,8 @@ public class Registration implements Serializable {
 
     private int userPoints;
 
+    private String otp;
+
     public String getFname() {
         return fname;
     }
@@ -100,6 +102,14 @@ public class Registration implements Serializable {
 
     public String getRegistrationDate() {
         return registrationDate;
+    }
+
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
     }
 
     public void setRegistrationDate(String registrationDate) {

@@ -75,6 +75,7 @@ public class ForgotPasswordActivityVM extends ActivityViewModel<ForgotPasswordAc
         Intent intent=new Intent(activity, OtpVerification.class);
         intent.putExtra("email",activity.getBinding().emailidEdt.getText().toString());
         intent.putExtra("otp",new SharedPref(activity,"").get("otp"));
+        intent.putExtra("isReset",1);
         activity.startActivity(intent);
     }
 

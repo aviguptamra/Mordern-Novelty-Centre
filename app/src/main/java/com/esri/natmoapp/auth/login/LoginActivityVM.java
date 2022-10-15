@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.esri.natmoapp.R;
 import com.esri.natmoapp.auth.forgotpassword.ForgotPasswordActivity;
+import com.esri.natmoapp.auth.otpverification.OtpVerification;
 import com.esri.natmoapp.auth.register.RegisterActivity;
 import com.esri.natmoapp.db.DatabaseController;
 import com.esri.natmoapp.model.APIErrorResponse;
@@ -107,14 +108,21 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
                     } else if (response.code() == 409) {
                         String response_error = response.errorBody().string();
                         APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
-                        Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG).show();
-                        commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
+                        String otp_email[]=apiErrorResponse.getMessage().split(",");
+                        showEmailNotVerified(otp_email[0].trim(),otp_email[1].trim());
                     } else if (response.code() == 401) {
                         String response_error = response.errorBody().string();
                         APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
                         Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG).show();
                         commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
-                    } else {
+                    }
+                    else if (response.code() == 412) {
+                        String response_error = response.errorBody().string();
+                        APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
+                        Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG).show();
+                        commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
+                    }
+                    else {
                         commonFunctions.showInternalError_Msg(activity);
                     }
                 } catch (Exception e) {
@@ -130,6 +138,29 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
             }
         });
     }
+
+    public void showEmailNotVerified(String email,String otp) {
+        if (commonFunctions.isNetworkConnected(activity)) {
+                android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(activity, R.style.alertdialog);
+                alertDialogBuilder.setMessage("Your email is not verified. Please verify your email !!");
+                alertDialogBuilder.setTitle("Alert");
+                alertDialogBuilder.setPositiveButton("OK", (dialog, id) -> NavigateToOtpScreen(email,otp));
+                alertDialogBuilder.setNegativeButton("Cancel", (dialog, id) -> dialog.cancel());
+                alertDialogBuilder.show();
+        } else {
+            commonFunctions.showInternetAlert(activity,1);
+        }
+    }
+
+    public void NavigateToOtpScreen(String email,String otp)
+    {
+        Intent intent=new Intent(activity, OtpVerification.class);
+        intent.putExtra("email",email);
+        intent.putExtra("otp",otp);
+        intent.putExtra("isReset",0);
+        activity.startActivity(intent);
+    }
+
 
     public void Login_Success(Registration registration,String token)
     {

@@ -13,12 +13,14 @@ public class OtpVerification extends BindingActivity<ActivityOtpverificationBind
 
     ProgressDialog progressDialog;
     String email, otp;
+    int isReset;
 
 
     @Override
     public OtpVerificationVM onCreate() {
         email=getIntent().getExtras().getString("email");
         otp=getIntent().getExtras().getString("otp");
+        isReset=getIntent().getExtras().getInt("isReset");
         progressDialog=new ProgressDialog(this);
         return new OtpVerificationVM(this, this);
     }
