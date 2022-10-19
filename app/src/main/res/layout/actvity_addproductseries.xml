@@ -84,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:hint="Remarks"
+                    android:visibility="gone"
                     android:textColorHint="@color/black"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
 

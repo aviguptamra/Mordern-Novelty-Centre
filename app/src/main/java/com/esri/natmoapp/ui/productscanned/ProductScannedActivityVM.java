@@ -65,7 +65,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
             try {
                 IntentIntegrator intentIntegrator = new IntentIntegrator(activity);
                 intentIntegrator.initiateScan();
-               // ScanProduct("56655DJMANGAL5t566BHARAT31");
+                //ScanProduct("MNRERTRMNR12345TTTTYYT34343MNR123447");
             } catch (Exception e) {
                 Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
@@ -179,6 +179,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
                         activity.startActivity(intent);
                     } else if (flagnavigation == 0) {
                         activity.getBinding().qrocdeeIcon.setText(String.valueOf(registration.getUserPoints()+" Points"));
+                        sharedPref.set("UserPoints",registration.getUserPoints());
                     }
                 } else if (response.code() == 401) {
                     commonFunctions.showSessionExpired_Msg(activity);
@@ -289,7 +290,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
 
     public void ScanProduct(String productId) {
         ProductDetails productDetails = new ProductDetails();
-        productDetails.setProductId(productId);
+        productDetails.setProductId(productId.trim().toUpperCase());
         productDetails.setLatitude(String.valueOf(activity.latitude));
         productDetails.setLongitude(String.valueOf(activity.longitude));
         productDetails.setAppVersion(Constants.APP_VERSION);

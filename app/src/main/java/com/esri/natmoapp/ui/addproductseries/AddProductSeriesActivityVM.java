@@ -64,7 +64,7 @@ public class AddProductSeriesActivityVM extends ActivityViewModel<AddProductSeri
         SharedPref sharedPref = new SharedPref(activity, "");
         String userId = sharedPref.get("UserId");
         AddProductSeries addProductSeries = new AddProductSeries();
-        addProductSeries.setProductSeriesUniqueId(activity.getBinding().productseriestxt.getText().toString());
+        addProductSeries.setProductSeriesUniqueId(activity.getBinding().productseriestxt.getText().toString().trim().toUpperCase());
         addProductSeries.setPointsScored(activity.getBinding().pointsedt.getText().toString());
         addProductSeries.setActive("true");
         addProductSeries.setCreatedBy(String.valueOf(userId));
@@ -74,7 +74,7 @@ public class AddProductSeriesActivityVM extends ActivityViewModel<AddProductSeri
         addProductSeries.setDeviceId(Settings.Secure.getString(activity.getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         addProductSeries.setAppVersion(Constants.APP_VERSION);
-        addProductSeries.setRemarks(activity.getBinding().remarksedt.getText().toString());
+        addProductSeries.setRemarks("remarks");
         return addProductSeries;
     }
 
@@ -164,12 +164,12 @@ public class AddProductSeriesActivityVM extends ActivityViewModel<AddProductSeri
             showsoftKeyBoard(activity);
             new CommonFunctions().showSnackBar("Points should be greater than 0 !!", false, activity);
         }
-        else if (activity.getBinding().remarksedt.getText().toString().equals("")) {
+       /* else if (activity.getBinding().remarksedt.getText().toString().equals("")) {
             valid = false;
             activity.getBinding().remarksedt.requestFocus();
             showsoftKeyBoard(activity);
             new CommonFunctions().showSnackBar("Please enter remarks !!", false, activity);
-        }
+        }*/
         return valid;
     }
 

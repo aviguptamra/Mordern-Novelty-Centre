@@ -390,7 +390,7 @@ public class RegisterActivityVM extends ActivityViewModel<RegisterActivity> {
         } else if (activity.getBinding().disnamedt.getText().toString().equals("")) {
             valid = false;
             activity.getBinding().disnamedt.requestFocus();
-            new CommonFunctions().showSnackBar("Please select disnamedt !!", false, activity);
+            new CommonFunctions().showSnackBar("Please select district name !!", false, activity);
         } else if (activity.getBinding().pincodenoedt.getText().toString().equals("")) {
             valid = false;
             activity.getBinding().pincodenoedt.requestFocus();
