@@ -65,7 +65,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
             try {
                 IntentIntegrator intentIntegrator = new IntentIntegrator(activity);
                 intentIntegrator.initiateScan();
-                //ScanProduct("MNRERTRMNR12345TTTTYYT34343MNR123447");
+                //ScanProduct("ZZZDFHBVHJTTYTTYTMNR34566Y24556MNRGTG");
             } catch (Exception e) {
                 Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
@@ -207,17 +207,25 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
         call.enqueue(new Callback<List<Registration>>() {
             @Override
             public void onResponse(Call<List<Registration>> call, Response<List<Registration>> response) {
-                interactor.setHideProgress();
-                List<Registration> registrationlist = response.body();
-                if (response.code() == 200) {
-                    NavigateToSearchUI(registrationlist);
-                } else if (response.code() == 401) {
-                    commonFunctions.showSessionExpired_Msg(activity);
-                } else {
-                    commonFunctions.showInternalError_Msg(activity);
+                try {
+                    interactor.setHideProgress();
+                    List<Registration> registrationlist = response.body();
+                    if (response.code() == 200) {
+                        NavigateToSearchUI(registrationlist);
+                    } else if (response.code() == 401) {
+                        commonFunctions.showSessionExpired_Msg(activity);
+                    } else if (response.code() == 409 || response.code() == 404) {
+                        String response_error = response.errorBody().string();
+                        APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
+                        Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG);
+                        commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
+                    } else {
+                        commonFunctions.showInternalError_Msg(activity);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-
             @Override
             public void onFailure(Call<List<Registration>> call, Throwable t) {
                 interactor.setHideProgress();
