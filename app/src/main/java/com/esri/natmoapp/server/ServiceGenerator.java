@@ -10,6 +10,9 @@ public class ServiceGenerator {
     //Server URL
     private static final String BASE_URL="http://3.111.2.67:8080/";
 
+    //Local URL
+    //private static final String BASE_URL="https://be37-49-207-202-172.in.ngrok.io";
+
     private static Retrofit retrofit = null;
     TaskService taskService;
 

@@ -105,7 +105,7 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
                     LoginResponse loginResponse = response.body();
                     if (response.code() == 200) {
                         Login_Success(loginResponse.getUserProfile(), loginResponse.getToken());
-                    } else if (response.code() == 409) {
+                    } else if (response.code() == 412) {
                         String response_error = response.errorBody().string();
                         APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
                         String otp_email[]=apiErrorResponse.getMessage().split(",");
@@ -116,7 +116,7 @@ public class LoginActivityVM extends ActivityViewModel<LoginActivity> {
                         Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG).show();
                         commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
                     }
-                    else if (response.code() == 412) {
+                    else if (response.code() == 409) {
                         String response_error = response.errorBody().string();
                         APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
                         Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG).show();

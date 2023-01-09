@@ -54,26 +54,38 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
+                        android:background="@color/theme_red"
+                        android:alpha="0.7"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/usernames"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:background="@color/theme_red"
                             android:fontFamily="@font/poppins_medium"
-                            android:gravity="center"
+                            android:gravity="left"
                             android:textSize="18dp"
                             android:padding="10dp"
+                            android:layout_weight="8"
                             android:maxLength="50"
-                            android:alpha="0.7"
                             android:text="DIVYANSH SRIVASTAVA"
                             android:textColor="@color/white"
                             android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
                             app:autoSizeMaxTextSize="100sp"
                             app:autoSizeMinTextSize="12sp"
                             app:autoSizeStepGranularity="2sp" />
+
+                        <Switch
+                            android:id="@+id/actdeact_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/green"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="1dp" />
 
                     </LinearLayout>
 
@@ -502,6 +514,48 @@
 
                     </LinearLayout>
 
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Status : "
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:textSize="16dp"
+                            android:textColor="@color/red"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLength="50"
+                            android:layout_weight="1"
+                            android:text="Active"
+                            android:textSize="16dp"
+                            android:textColor="@color/black"
+                            app:autoSizeMaxTextSize="100sp"
+                            app:autoSizeMinTextSize="12sp"
+                            app:autoSizeStepGranularity="2sp" />
+
+
+
+
+                    </LinearLayout>
 
 
 

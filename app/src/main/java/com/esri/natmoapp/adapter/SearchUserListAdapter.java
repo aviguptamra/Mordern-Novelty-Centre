@@ -13,6 +13,7 @@ import android.view.ViewParent;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,7 +76,20 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
             if (FLAG_SearchOrActivityResult == 4) {
                 holder.name.setText("Redeem Credit -  "+getValuefromFeld(feild_names[0], SearchListResponseData.get(position)).toString().toUpperCase()+" Points");
             } else {
-                holder.name.setText(getValuefromFeld(feild_names[0], SearchListResponseData.get(position)).toString().toUpperCase());
+                if (FLAG_SearchOrActivityResult == 3) {
+                    SharedPref sharedPref = new SharedPref(context, "");
+                    String usertype = sharedPref.get("UserType");
+                    if (!usertype.trim().toLowerCase().equals("admin")) {
+                        String temp = getValuefromFeld(feild_names[0], SearchListResponseData.get(position)).toString().toUpperCase();
+                        String productid = "xxx" + temp.substring(3, 5) + "xx" + temp.substring(8, temp.length() - 2) + "xx";
+                        holder.name.setText(productid);
+                    }
+                    else {
+                        holder.name.setText(getValuefromFeld(feild_names[0], SearchListResponseData.get(position)).toString().toUpperCase());
+                    }
+                } else {
+                    holder.name.setText(getValuefromFeld(feild_names[0], SearchListResponseData.get(position)).toString().toUpperCase());
+                }
             }
             if (getValuefromFeld(feild_names[1], SearchListResponseData.get(position)) != null) {
                 holder.Label1Text.setText(getValuefromFeld(feild_names[1], SearchListResponseData.get(position)).toString());
@@ -109,6 +123,7 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
             }
             if (FLAG_SearchOrActivityResult == 2) {
                 holder.deleteimgview.setVisibility(View.VISIBLE);
+                holder.aSwitch.setVisibility(View.GONE);
                 holder.deleteimgview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -124,6 +139,20 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
                 });
             } else {
                 holder.deleteimgview.setVisibility(View.GONE);
+                if (FLAG_SearchOrActivityResult == 1) {
+                    holder.aSwitch.setVisibility(View.VISIBLE);
+                } else {
+                    holder.aSwitch.setVisibility(View.GONE);
+                }
+                boolean isActive= Boolean.parseBoolean(getValuefromFeld("isActive", SearchListResponseData.get(position)).toString());
+                if (isActive) {
+                    holder.aSwitch.setText("Active");
+                    holder.aSwitch.setTextColor(context.getResources().getColor(R.color.green));
+
+                } else {
+                    holder.aSwitch.setText("Inactive");
+                    holder.aSwitch.setTextColor(context.getResources().getColor(R.color.rederror));
+                }
             }
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
@@ -157,7 +186,8 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
         TextView name, Label1Text, Label2Text,Label3Text;
         TextView Label1, Label2,Label3;
         CheckBox checkbox;
-        ImageView deleteimgview, tickView;
+        ImageView deleteimgview;
+        TextView aSwitch;
 
         public SearchViewHolder(View itemView) {
             super(itemView);
@@ -166,6 +196,7 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
             Label2Text = (TextView) itemView.findViewById(R.id.txtLabel2Text);
             Label3Text = (TextView) itemView.findViewById(R.id.txtLabel3Text);
             deleteimgview=(ImageView)itemView.findViewById(R.id.img_grp);
+            aSwitch=(TextView) itemView.findViewById(R.id.actdeact);
 
             Label1 = (TextView) itemView.findViewById(R.id.txtLabel1);
             Label2 = (TextView) itemView.findViewById(R.id.txtLabel2);

@@ -12,7 +12,7 @@ public class UserPoints implements Serializable {
 
     private String Points_Scored;
 
-    private String isActive;
+    private boolean isActive;
 
     private String CreatedBy;
 
@@ -46,14 +46,6 @@ public class UserPoints implements Serializable {
         Username = username;
     }
 
-    public String getIsActive() {
-        return isActive;
-    }
-
-    public void setIsActive(String isActive) {
-        this.isActive = isActive;
-    }
-
     public String getPoints_Scored() {
         return Points_Scored;
     }
@@ -68,6 +60,14 @@ public class UserPoints implements Serializable {
 
     public String getUser_Organization() {
         return User_Organization;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public void setUser_Organization(String user_Organization) {

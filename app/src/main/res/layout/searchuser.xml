@@ -22,13 +22,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></include>
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_searchUser"
+            app:tabBackground="@drawable/tab_color_selector"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/theme_red"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="@color/black" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager_user"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/tabs_user"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
 
         <LinearLayout
             android:id="@+id/searchLyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/light_grey"
-            android:layout_below="@+id/toolbar_searchUser"
+            android:layout_below="@+id/viewpager_user"
             android:orientation="horizontal">
 
             <LinearLayout

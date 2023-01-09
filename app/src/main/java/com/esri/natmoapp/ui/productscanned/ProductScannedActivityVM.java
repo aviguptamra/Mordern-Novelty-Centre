@@ -65,7 +65,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
             try {
                 IntentIntegrator intentIntegrator = new IntentIntegrator(activity);
                 intentIntegrator.initiateScan();
-                //ScanProduct("ZZZDFHBVHJTTYTTYTMNR34566Y24556MNRGTG");
+                //ScanProduct("BHARAT313556676");
             } catch (Exception e) {
                 Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
@@ -246,6 +246,7 @@ public class ProductScannedActivityVM extends ActivityViewModel<ProductScannedAc
             userPoints.setUser_Organization(registration.getOrganizationName());
             userPoints.setCreatedDate(registration.getLastActive());
             userPoints.setUserId(registration.getUserId());
+            userPoints.setActive(registration.isActive());
             userPointsList.add(userPoints);
         }
         userPointsListcopy.addAll(userPointsList);

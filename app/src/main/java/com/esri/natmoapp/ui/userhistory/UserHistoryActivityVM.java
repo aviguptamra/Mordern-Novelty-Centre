@@ -34,6 +34,7 @@ import com.stfalcon.androidmvvmhelper.mvvm.activities.ActivityViewModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -255,7 +256,7 @@ public class UserHistoryActivityVM extends ActivityViewModel<UserHistoryActivity
 
     public void RedeemPoint() {
         RedeemHistory redeemHistory = new RedeemHistory();
-        redeemHistory.setPointsRedeemed(Integer.parseInt(points_ToRedeem.getText().toString()));
+        redeemHistory.setPointsRedeemed(Integer.parseInt(Objects.requireNonNull(points_ToRedeem.getText()).toString()));
         redeemHistory.setUserId(activity.registration.getUserId());
         redeemHistory.setLatitude((String.valueOf(activity.latitude)));
         redeemHistory.setLongitude((String.valueOf(activity.longitude)));

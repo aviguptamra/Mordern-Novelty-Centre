@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.esri.natmoapp.model.APIErrorResponse;
+import com.esri.natmoapp.model.ActivateUser;
 import com.esri.natmoapp.model.ProductDetails;
 import com.esri.natmoapp.model.RedeemHistory;
 import com.esri.natmoapp.model.Registration;
@@ -56,6 +57,13 @@ public class UserDetailsActivityVM extends ActivityViewModel<UserDetailsActivity
         activity.getBinding().district.setText(activity.registration.getDistrict());
         activity.getBinding().pincodes.setText(activity.registration.getPin());
         activity.getBinding().credits.setText(activity.scoredpoints);
+        if (activity.registration.isActive()) {
+            activity.getBinding().status.setText("Active");
+            activity.getBinding().actdeactSwitch.setChecked(true);
+        } else {
+            activity.getBinding().status.setText("Inactive");
+            activity.getBinding().actdeactSwitch.setChecked(false);
+        }
         activity.getBinding().cardView.setVisibility(View.VISIBLE);
         activity.getBinding().backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +94,88 @@ public class UserDetailsActivityVM extends ActivityViewModel<UserDetailsActivity
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        SharedPref sharedPref = new SharedPref(activity, "");
+        String usertype = sharedPref.get("UserType");
+        if (usertype.trim().toLowerCase().equals("admin")) {
+            activity.getBinding().actdeactSwitch.setVisibility(View.VISIBLE);
+        } else {
+            activity.getBinding().actdeactSwitch.setVisibility(View.GONE);
+        }
+
+        activity.getBinding().actdeactSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    if (commonFunctions.isNetworkConnected(activity)) {
+                        if (activity.getBinding().actdeactSwitch.isChecked()) {
+                            activity.getBinding().status.setText("Active");
+                            ActivateUser_DeActivateUser(true);
+                        } else {
+                            activity.getBinding().status.setText("Inactive");
+                            ActivateUser_DeActivateUser(false);
+                        }
+                    } else {
+                        commonFunctions.showMessage(activity, "Alert", "Please check your internet connection !!");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void ActivateUser_DeActivateUser(boolean status) {
+        ActivateUser activateUser = new ActivateUser();
+        activateUser.setUserId(activity.registration.getUserId());
+        activateUser.setActive(status);
+        if (commonFunctions.isNetworkConnected(activity)) {
+            Activate_DeactivateUser(activateUser);
+        } else {
+            commonFunctions.showMessage(activity, "Alert", "Please check your internet connection !!");
+        }
+    }
+
+    public void Activate_DeactivateUser(ActivateUser activateUser) {
+        SharedPref sharedPref = new SharedPref(activity, "");
+        String token = sharedPref.get("Token");
+        activity.progressDialog.setMessage("Communicating from server");
+        interactor.setShowProgress();
+        Call<Void> call = serviceGenerator.getService().Activate_DeActivateUser(activateUser, "Bearer " + token.trim());
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                try {
+                    interactor.setHideProgress();
+                    if (response.code() == 204) {
+                        if (activateUser.isActive()) {
+                            Toast.makeText(activity, "User is activated successfully.", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(activity, "User is  de activated successfully.", Toast.LENGTH_LONG).show();
+                        }
+                    } else if (response.code() == 409 || response.code() == 404) {
+                        String response_error = response.errorBody().string();
+                        APIErrorResponse apiErrorResponse = new Gson().fromJson(response_error, APIErrorResponse.class);
+                        Toast.makeText(activity, apiErrorResponse.getMessage(), Toast.LENGTH_LONG);
+                        commonFunctions.showMessage(activity, "Alert", apiErrorResponse.getMessage());
+                    }
+                    else if (response.code() == 401) {
+                        commonFunctions.showSessionExpired_Msg(activity);
+                    } else {
+                        commonFunctions.showInternalError_Msg(activity);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                interactor.setHideProgress();
+                interactor.setServerError();
+                Toast.makeText(activity, "Unable to get response from server",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -191,6 +281,7 @@ public class UserDetailsActivityVM extends ActivityViewModel<UserDetailsActivity
             userPoints.setUser_Organization(registration.getOrganizationName());
             userPoints.setCreatedDate(registration.getLastActive());
             userPoints.setUserId(registration.getUserId());
+            userPoints.setActive(registration.isActive());
             userPointsList.add(userPoints);
         }
         userPointsListcopy.addAll(userPointsList);

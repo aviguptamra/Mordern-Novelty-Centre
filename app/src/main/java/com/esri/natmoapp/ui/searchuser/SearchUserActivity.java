@@ -9,12 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.esri.natmoapp.BR;
 import com.esri.natmoapp.R;
 import com.esri.natmoapp.adapter.SearchUserListAdapter;
+import com.esri.natmoapp.adapter.ViewPagerAdapter;
 import com.esri.natmoapp.databinding.SearchuserBinding;
 import com.esri.natmoapp.ui.productscanned.ProductScannedActivity;
+import com.google.android.material.tabs.TabLayout;
 import com.stfalcon.androidmvvmhelper.mvvm.activities.BindingActivity;
 
 import java.util.ArrayList;
@@ -30,17 +33,33 @@ public class SearchUserActivity extends BindingActivity<SearchuserBinding, Searc
     ProgressDialog progressDialog;
     List SearchListResponseData;
     List SearchListResponseDataActual;
+    List SearchListAllUsers=new ArrayList();
+    List SearchListActiveUsers=new ArrayList();
+    List SearchListInActiveUsers=new ArrayList();
     SearchUserListAdapter searchUserListAdapter;
     TextView Toolbar_Heading;
     ImageView back_searchuser;
     public static String[] feild_Names = {"Username", "Points_Scored", "CreatedDate","User_Organization","UserId"};
     public static String[] feild_Labels = {"Scored Credits", "Last Active Date","Organization Name"};
 
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    String[] tabs = {"All(34)", "Active(2)","Inactive(23)"};
+
     @Override
     public SearchUserActivityVM onCreate() {
 
         SearchListResponseData = (ArrayList) getIntent().getSerializableExtra("list");
         SearchListResponseDataActual = (ArrayList) getIntent().getSerializableExtra("listcopy");
+
+        viewPager = (ViewPager) findViewById(R.id.viewpager_user);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.title = tabs;
+        viewPager.setAdapter(adapter);
+        tabLayout = (TabLayout) findViewById(R.id.tabs_user);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.theme_red));
+        tabLayout.setSelectedTabIndicatorHeight(8);
 
         Toolbar_Heading=(TextView)findViewById(R.id.Search_userHeading);
         search=(ImageView)findViewById(R.id.seachimg);

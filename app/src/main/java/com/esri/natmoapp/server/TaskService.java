@@ -1,5 +1,6 @@
 package com.esri.natmoapp.server;
 
+import com.esri.natmoapp.model.ActivateUser;
 import com.esri.natmoapp.model.AddProductSeries;
 import com.esri.natmoapp.model.ForgotPassword;
 import com.esri.natmoapp.model.LoginResponse;
@@ -66,6 +67,9 @@ public interface TaskService {
 
     @POST("/user/verifyMail")
     Call<Void> VerifyMail(@Body VerifyMail verifyMail);
+
+    @POST("/user/activateUser")
+    Call<Void> Activate_DeActivateUser(@Body ActivateUser activateUser, @Header("Authorization") String auth);
 
 }
 
